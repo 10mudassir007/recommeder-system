@@ -54,7 +54,7 @@ if not movie:
                 similar_movies_idx = similarity_matrix[movie_id[0]].argsort()[::-1][1:7]
                 similar_movies = movies_df['title'].iloc[similar_movies_idx]
                 movies_links = links.iloc[similar_movies_idx].to_numpy()
-                if movie1 in similar_movies:
+                if movie1 in similar_movies.to_numpy():
                     index = np.where(similar_movies == movie1)[0][0]
         
                     similar_movies = np.delete(similar_movies,index)
